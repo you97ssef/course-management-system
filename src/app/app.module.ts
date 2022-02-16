@@ -7,6 +7,7 @@ import { LoginComponent } from './pages/users/login/login.component';
 import { UpdateUserComponent } from './pages/users/update-user/update-user.component';
 import { NewCourseComponent } from './pages/courses/new-course/new-course.component';
 import { AllCoursesComponent } from './pages/courses/all-courses/all-courses.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { AllCoursesComponent } from './pages/courses/all-courses/all-courses.com
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
