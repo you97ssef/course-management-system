@@ -16,11 +16,11 @@
       </div>
       <div class="m-4">
         <h6>Start Date :</h6>
-        <p>{{ course!.start }}</p>
+        <p>{{ course!.start | date: 'dd/MM/yyyy' }}</p>
       </div>
       <div class="m-4">
         <h6>End Date :</h6>
-        <p>{{ course!.end }}</p>
+        <p>{{ course!.end | date: 'dd/MM/yyyy'}}</p>
       </div>
       <div class="m-4">
         <h6>Number of students :</h6>
