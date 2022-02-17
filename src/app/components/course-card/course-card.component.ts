@@ -9,10 +9,10 @@ import { Course } from 'src/app/models/course';
 export class CourseCardComponent implements OnInit {
   @Input('course') course: Course = {
     id: 1,
-    category: 'category',
-    name: 'name',
-    description: 'description',
-    subject: 'subject',
+    category: '',
+    name: '',
+    description: '',
+    subject: '',
     start: new Date(),
     end: new Date(),
     students: 0,

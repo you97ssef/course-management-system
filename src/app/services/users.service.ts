@@ -34,7 +34,7 @@ export class UsersService {
     localStorage.setItem('connected', JSON.stringify(newData));
   }
 
-  getRandomUser(){
+  getRandomUser() {
     let users: Array<User> = JSON.parse(localStorage.getItem('users')!);
 
     return users[Math.floor(Math.random() * users.length)];

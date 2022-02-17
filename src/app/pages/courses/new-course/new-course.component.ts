@@ -32,4 +32,18 @@ export class NewCourseComponent implements OnInit {
     this.coursesServices.newCourse(this.course);
     this.router.navigate(['/']);
   }
+
+  fillForm() {
+    this.course = {
+      id: Db.courses.length,
+      name: 'Course' + Db.courses.length,
+      description:
+        'in congue etiam justo etiam pretium iaculis justo in hac habitasse',
+      category: 'category',
+      subject: 'subject',
+      start: new Date('9/10/2021'),
+      end: new Date('8/11/2021'),
+      students: 34,
+    };
+  }
 }
