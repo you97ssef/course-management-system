@@ -8,6 +8,12 @@ import { UpdateUserComponent } from './pages/users/update-user/update-user.compo
 import { NewCourseComponent } from './pages/courses/new-course/new-course.component';
 import { AllCoursesComponent } from './pages/courses/all-courses/all-courses.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { CourseCardComponent } from './components/course-card/course-card.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { DetailsComponent } from './pages/courses/details/details.component';
 
 @NgModule({
   declarations: [
@@ -16,13 +22,18 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     UpdateUserComponent,
     NewCourseComponent,
     AllCoursesComponent,
+    NavbarComponent,
+    CourseCardComponent,
+    NotFoundComponent,
+    DetailsComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FormsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

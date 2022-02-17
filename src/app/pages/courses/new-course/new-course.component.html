@@ -1,1 +1,88 @@
-<p>new-course works!</p>
+<div class="m-auto" style="max-width: 700px">
+  <div class="card m-4">
+    <form
+      class="card-body"
+      #form="ngForm"
+      class="card-body"
+      (ngSubmit)="newCourse()"
+    >
+      <h1 class="card-title text-center mb-3">New course</h1>
+      <div class="mt-2 form-group">
+        <label for="name">Name</label>
+        <input
+          type="text"
+          class="form-control"
+          [(ngModel)]="course.name"
+          name="name"
+          id="name"
+          placeholder="Course Name..."
+        />
+      </div>
+      <div class="mt-2 form-group">
+        <label for="name">Subject</label>
+        <input
+          type="text"
+          class="form-control"
+          [(ngModel)]="course.subject"
+          name="subject"
+          id="subject"
+          placeholder="Course Subject..."
+        />
+      </div>
+      <div class="mt-2 form-group">
+        <label for="category">Category</label>
+        <input
+          type="text"
+          class="form-control"
+          [(ngModel)]="course.category"
+          name="category"
+          id="category"
+          placeholder="Course Subject..."
+        />
+      </div>
+      <div class="mt-2 form-group">
+        <label for="description">Description</label>
+        <textarea
+          class="form-control"
+          [(ngModel)]="course.description"
+          name="description"
+          id="description"
+          placeholder="Course description..."
+          rows="5"
+        ></textarea>
+      </div>
+      <div class="mt-2 form-group">
+        <label for="start">Start</label>
+        <input
+          type="date"
+          class="form-control"
+          [(ngModel)]="course.start"
+          name="start"
+          id="start"
+        />
+      </div>
+      <div class="mt-2 form-group">
+        <label for="end">End</label>
+        <input
+          type="date"
+          class="form-control"
+          [(ngModel)]="course.end"
+          name="end"
+          id="end"
+        />
+      </div>
+      <div class="mt-2 form-group">
+        <label for="number">Students number</label>
+        <input
+          type="number"
+          class="form-control"
+          [(ngModel)]="course.students"
+          name="number"
+          id="number"
+          placeholder="10"
+        />
+      </div>
+      <button type="submit" class="mt-3 btn btn-warning">Add Course</button>
+    </form>
+  </div>
+</div>

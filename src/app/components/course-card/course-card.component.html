@@ -1,0 +1,11 @@
+<div class="card m-1 text-center">
+  <div class="card-body">
+    <h5 class="card-title">{{ course.name }}</h5>
+    <p class="card-text">
+      {{ course.category }}
+    </p>
+    <a class="btn btn-primary" [routerLink]="['/course/', course.id]">
+      See course Details
+    </a>
+  </div>
+</div>

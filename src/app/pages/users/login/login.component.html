@@ -1,1 +1,54 @@
-<p>login works!</p>
+<div class="m-auto" style="max-width: 700px">
+  <div class="card m-4">
+    <form #loginForm="ngForm" class="card-body" (ngSubmit)="onLogin()">
+      <h1 class="card-title text-center mb-3">Login</h1>
+      <div class="mt-2 form-group">
+        <label for="email">Email address</label>
+        <input
+          type="email"
+          class="form-control"
+          id="email"
+          name="email"
+          placeholder="email@example.com"
+          [(ngModel)]="login.email"
+          required
+        />
+      </div>
+      <div class="mt-2 form-group">
+        <label for="password">Password</label>
+        <input
+          [type]="showPassword ? 'text' : 'password'"
+          class="form-control"
+          id="password"
+          name="password"
+          placeholder="***********"
+          [(ngModel)]="login.password"
+          required
+        />
+      </div>
+      <div class="mt-2 form-group form-check">
+        <input
+          type="checkbox"
+          class="form-check-input"
+          id="showPassword"
+          (click)="showPassword = !showPassword"
+        />
+        <label class="form-check-label" for="showPassword">Show password</label>
+      </div>
+      <button
+        type="submit"
+        [disabled]="!loginForm.valid"
+        class="mt-3 btn btn-primary"
+      >
+        Sign in
+      </button>
+      <button
+        type="button"
+        (click)="fillForm()"
+        class="mt-3 mx-4 btn btn-warning"
+      >
+        Fill with random user (for test)
+      </button>
+    </form>
+  </div>
+</div>

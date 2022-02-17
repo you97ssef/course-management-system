@@ -1,0 +1,46 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a routerLink="/" class="navbar-brand">Courses system</a>
+    <button class="navbar-toggler" type="button" (click)="toggleNavbar()">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" [ngClass]="{ show: navbarOpen }">
+      <ul
+        class="navbar-nav me-auto mb-2 mb-lg-0"
+        *ngIf="authService.isAuthenticated()"
+      >
+        <li class="nav-item" *ngIf="authService.isUserInstructor()">
+          <a
+            class="nav-link active"
+            aria-current="page"
+            routerLink="/courses/new"
+            >New Course</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link active"
+            aria-current="page"
+            routerLink="/accounts/update"
+          >
+            Update Account
+          </a>
+        </li>
+      </ul>
+      <div class="d-flex">
+        <a
+          *ngIf="!authService.isAuthenticated(); else logOut"
+          routerLink="/login"
+          class="btn btn-outline-success"
+          type="submit"
+          >Login</a
+        >
+        <ng-template #logOut>
+          <button (click)="deconnect()" class="btn btn-outline-danger">
+            Deconnect
+          </button>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+</nav>

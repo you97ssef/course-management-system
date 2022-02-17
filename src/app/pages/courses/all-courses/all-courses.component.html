@@ -1,1 +1,47 @@
-<p>all-courses works!</p>
+<div class="container">
+  <div class="row">
+    <div class="card m-4">
+      <div class="card-body">
+        <div class="m-2 form-group">
+          <label for="name">Search by Course name</label>
+          <input
+            type="name"
+            class="form-control"
+            id="name"
+            name="name"
+            placeholder="Course 1"
+            required
+            [(ngModel)]="courseName"
+            (keyup)="searchByName()"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="card m-4">
+      <form class="card-body" (submit)="searchByDate()">
+        <div class="m-2 form-group">
+          <label for="date">Search by Course name</label>
+          <input
+            type="date"
+            class="form-control"
+            id="date"
+            name="date"
+            placeholder="Course 1"
+            required
+            [(ngModel)]="courseDate"
+          />
+        </div>
+        <div class="m-2">
+          <button class="btn btn-info">Search by date</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <ng-container *ngFor="let course of courses">
+      <div class="col-sm col-md-6 col-lg-4 col-xl-3 col-xxl-2">
+        <app-course-card [course]="course"></app-course-card>
+      </div>
+    </ng-container>
+  </div>
+</div>
